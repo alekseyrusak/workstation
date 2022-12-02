@@ -1,0 +1,23 @@
+if [[ -f /etc/bashrc ]]; then
+  # Load the main settings of the current operating system.
+  source /etc/bashrc
+fi
+
+source "${HOME}/.aliases.bash"
+source "${HOME}/.exports.bash"
+source "${HOME}/.functions.bash"
+
+# Create a new meta storage of the executed commands.
+shopt -s checkhash
+
+# Check the size of the current screen.
+shopt -s checkwinsize
+
+# Use recursive commands expansion.
+shopt -s globstar 2> /dev/null
+
+# Use case-insensitive expansion.
+shopt -s nocaseglob
+
+# Save the executed commands to the main history storage.
+shopt -s histappend
